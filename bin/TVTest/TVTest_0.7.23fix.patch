@@ -1,0 +1,10 @@
+--- BonTsEngine/MediaViewer.cpp.orig
++++ BonTsEngine/MediaViewer.cpp
+@@ -40,6 +40,7 @@
+ 	// ビデオヘッダ設定
+ 	VIDEOINFOHEADER2 &VideoHeader = pVideoInfo->hdr;
+ 	//::SetRect(&VideoHeader.rcSource, 0, 0, Width, Height);
++	VideoHeader.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
+ 	VideoHeader.bmiHeader.biWidth = Width;
+ 	VideoHeader.bmiHeader.biHeight = Height;
+ 	return S_OK;

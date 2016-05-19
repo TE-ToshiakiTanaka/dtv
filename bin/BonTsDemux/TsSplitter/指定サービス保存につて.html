@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+  <meta name="Author" content="Tssplitter">
+  <title>TsSplitter - [指定サービス保存について]</title>
+	<STYLE>
+		<!-- 
+		BODY,DIV,TABLE,THEAD,TBODY,TFOOT,TR,TH,TD,P { font-family:"ＭＳ Ｐゴシック"; font-size:x-small }
+		 -->
+	</STYLE>
+</head>
+<body text="#000000" bgcolor="#c0c0ff" link="#0000ff" vlink="#800080"
+ alink="#ff0080">
+<br>
+<PRE>
+注意事項:
+SD/HDの抽出機能ですが、最近の録画ソフトにある「指定サービスのみ」保存では機能しません。
+これは、1つの局に複数のサービスがある場合にすべてが同じ映像を表示しているか、別々の映像を表示しているかを見てSD/HDの判断しているため指定サービスのみの場合は正しく判定できません。
+このような場合、PMTによる分割を使用することでSD,HDの切り換え点で分離できます。(切り換え時にはPMTが変更される)
+また、「指定サービスのみ」保存時にPATを書き換えていない場合にTsSplitetrが正しく動作しない場合がありますが、このような場合は「CS放送の分割を行なう」"-CS"パラメータをつけて実行してみて下さい。
+</PRE>
+<br>
+<TABLE FRAME=VOID CELLSPACING=0 COLS=12 RULES=NONE BORDER=0>
+	<COLGROUP><COL WIDTH=108><COL WIDTH=93><COL WIDTH=93><COL WIDTH=99><COL WIDTH=120><COL WIDTH=86><COL WIDTH=86><COL WIDTH=86><COL WIDTH=86><COL WIDTH=86><COL WIDTH=86><COL WIDTH=86></COLGROUP>
+	<TBODY>
+		<TR>
+			<TD COLSPAN=3 WIDTH=295 HEIGHT=18 ALIGN=LEFT>PATや、PMTについて</TD>
+			<TD WIDTH=99 ALIGN=LEFT><BR></TD>
+			<TD WIDTH=120 ALIGN=LEFT><BR></TD>
+			<TD WIDTH=86 ALIGN=LEFT><BR></TD>
+			<TD WIDTH=86 ALIGN=LEFT><BR></TD>
+			<TD WIDTH=86 ALIGN=LEFT><BR></TD>
+			<TD WIDTH=86 ALIGN=LEFT><BR></TD>
+			<TD WIDTH=86 ALIGN=LEFT><BR></TD>
+			<TD WIDTH=86 ALIGN=LEFT><BR></TD>
+			<TD WIDTH=86 ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=18 ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" COLSPAN=4 ALIGN=CENTER BGCOLOR="#9999FF">放送局１</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD COLSPAN=5 ALIGN=LEFT>PATは放送局内にいくつのサービス(チャンネル)が含まれるかを表す</TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=18 ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#83CAFF">サービス1</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#FFFF99">サービス2</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#EB613D">サービス3</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#B3B3B3">ワンセグ</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD COLSPAN=5 ROWSPAN=2 ALIGN=LEFT BGCOLOR="#9999FF">PAT(サービス1=PMT1、サービス2=PMT2、サービス3=PMT3 、ワンセグ=PMT4)</TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" COLSPAN=3 ROWSPAN=5 ALIGN=CENTER VALIGN=MIDDLE BGCOLOR="#23FF23">HD放送 (110,111,112,113)</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ROWSPAN=14 ALIGN=CENTER VALIGN=MIDDLE BGCOLOR="#CCCCCC">ワンセグ放送 (140,141)</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD COLSPAN=5 ROWSPAN=2 ALIGN=LEFT>PMTはサービスで使用する映像、音声、字幕、データ放送などの識別子(PID)を表す。</TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=18 ALIGN=LEFT>PMTが変わる</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD COLSPAN=5 ROWSPAN=2 ALIGN=LEFT>HD放送時はPMT1～PMT3が使用する映像、音声などはすべて 同じ識別子を示し実際のデータも一つ分しか存在しない。</TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ROWSPAN=4 ALIGN=CENTER VALIGN=MIDDLE BGCOLOR="#99CCFF">SD放送1 (110,111,112,113,200,201)</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ROWSPAN=4 ALIGN=CENTER VALIGN=MIDDLE BGCOLOR="#FFFF99">SD放送2 (120,121)</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ROWSPAN=4 ALIGN=CENTER VALIGN=MIDDLE BGCOLOR="#EB613D">SD放送3 (130,131,133,230,231,232)</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=18 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD COLSPAN=5 ALIGN=LEFT BGCOLOR="#23FF23">PMT1(映像=110、音声=111、音声=112、字幕=113)</TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=18 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD COLSPAN=5 ALIGN=LEFT BGCOLOR="#23FF23">PMT2(映像=110、音声=111、音声=112、字幕=113)</TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=18 ALIGN=LEFT>PMTが変わる</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD COLSPAN=5 ALIGN=LEFT BGCOLOR="#23FF23">PMT3(映像=110、音声=111、音声=112、字幕=113)</TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=18 ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" COLSPAN=3 ROWSPAN=5 ALIGN=CENTER VALIGN=MIDDLE BGCOLOR="#23FF23">HD放送 (110,111,112,113)</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD COLSPAN=5 ALIGN=LEFT BGCOLOR="#CCCCCC">PMT4(映像=140、音声=141)</TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD COLSPAN=5 ROWSPAN=2 ALIGN=LEFT>SD放送時はPMT1～PMT3は別々の映像、音声を使用し、 tsデータ内に混ざって存在する。</TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=18 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD COLSPAN=6 ALIGN=LEFT BGCOLOR="#99CCFF">PMT1(映像=110、音声=111、音声=112、字幕=113、データ=200、データ=201)</TD>
+			</TR>
+		<TR>
+			<TD HEIGHT=18 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD COLSPAN=5 ALIGN=LEFT BGCOLOR="#FFFF99">PMT2(映像=120、音声=121)</TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=18 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD COLSPAN=6 ALIGN=LEFT BGCOLOR="#EB613D">PMT3(映像=130、音声=131、字幕=133、データ=230、データ=231、データ=232)</TD>
+			</TR>
+		<TR>
+			<TD HEIGHT=18 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=CENTER VALIGN=MIDDLE><BR></TD>
+			<TD ALIGN=CENTER VALIGN=MIDDLE><BR></TD>
+			<TD ALIGN=CENTER VALIGN=MIDDLE><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD COLSPAN=5 ALIGN=LEFT BGCOLOR="#CCCCCC">PMT4(映像=140、音声=141)</TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=CENTER VALIGN=MIDDLE><BR></TD>
+			<TD ALIGN=CENTER VALIGN=MIDDLE><BR></TD>
+			<TD ALIGN=CENTER VALIGN=MIDDLE><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD COLSPAN=5 ROWSPAN=2 ALIGN=LEFT>※モノラル2ヶ国語だと音声は1つのみだが、ステレオ(5.1ch)2ヶ国語 だと複数ある場合がある。</TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD COLSPAN=5 ALIGN=LEFT>※字幕、データは番組毎にあったりなかったりする。</TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD COLSPAN=5 ROWSPAN=2 ALIGN=LEFT>※CS放送だと「放送局1」の部分が「ND2」～「ND24」の分類になり、サービスは それぞれが1つの番組として使用されます。</TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+	</TBODY>
+</TABLE>
+<BR>
+<br>
+</body>
+</html>

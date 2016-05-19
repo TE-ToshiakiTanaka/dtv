@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF8">
+</head>
+<body onContextmenu="return false">
+<div style="margin-top : -16px">
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+function getheight(){
+ if(document.all){
+  return(document.body.clientHeight);
+ } else if(document.layers){
+  return(innerHeight);
+ } else if(document.getElementById){
+  return(innerHeight);
+ } else {
+  return(-1);
+ }
+}
+function getparam(){
+ var n="";
+ if(window.location.search){
+  n=window.location.search.substring(1,window.location.search.length);
+ }
+ return(decodeURIComponent(n));
+}
+document.body.style.overflow="hidden";
+new TWTR.Widget({
+  version: 2,
+  type: 'search',
+  search: getparam(),
+  interval: 5000,
+  width: 'auto',
+  height: getheight()-52,
+  theme: {
+    shell: {
+      background: '#ffffff',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#f0fff2',
+      color: '#555555',
+      links: '#1985b5'
+    }
+  },
+  features: {
+    scrollbar: true,
+    loop: false,
+    live: true,
+    hashtags: false,
+    timestamp: true,
+    avatars: true,
+    behavior: 'all'
+  }
+}).render().start();
+</script>
+</div>
+</body>
+</html>
